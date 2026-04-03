@@ -3,6 +3,8 @@ alias brc="source ~/.zshrc"
 alias newalias="vs ~/.oh-my-zsh/custom/aliases.zsh"
 alias c="clear"
 alias where="which"
+alias ..="cd .."
+alias ...="cd ../.."
 alias nr="npm run"
 alias dotfiles="vs ~/dotfiles"
 
