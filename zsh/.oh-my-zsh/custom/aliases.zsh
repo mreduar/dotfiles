@@ -2,6 +2,9 @@
 alias brc="source ~/.zshrc"
 alias newalias="vs ~/.oh-my-zsh/custom/aliases.zsh"
 alias c="clear"
+alias where="which"
+alias nr="npm run"
+alias dotfiles="vs ~/dotfiles"
 
 # Laravel / Sail
 alias sail="vendor/bin/sail"
@@ -20,6 +23,8 @@ alias gf="git fetch"
 alias wta="git worktree add"
 alias wtr="git worktree remove"
 alias nah="git reset --hard HEAD && git clean -df"
+alias gitmainormaster='printf "%s\n" $(git branch --format "%(refname:short)" --sort=-committerdate --list master main) main | head -n 1'
+alias main='git checkout $(gitmainormaster)'
 
 # Testing
 alias p='./vendor/bin/sail bin pest'
