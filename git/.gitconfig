@@ -3,6 +3,8 @@
 	name = Eduar Bastidas
 [push]
 	autoSetupRemote = true
+[diff]
+	external = difft
 [merge]
 	conflictStyle = diff3
 [merge "mergiraf"]

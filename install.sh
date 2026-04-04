@@ -71,6 +71,12 @@ if ! command -v mergiraf &>/dev/null; then
     cargo install --locked mergiraf
 fi
 
+# Difftastic (syntax-aware diff viewer)
+if ! command -v difft &>/dev/null; then
+    echo "==> Installing Difftastic..."
+    cargo install --locked difftastic
+fi
+
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "==> Installing Oh My Zsh..."
