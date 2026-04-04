@@ -65,6 +65,12 @@ if ! command -v claude &>/dev/null; then
     npm install -g @anthropic-ai/claude-code
 fi
 
+# Mergiraf (syntax-aware git merge driver)
+if ! command -v mergiraf &>/dev/null; then
+    echo "==> Installing Mergiraf..."
+    cargo install --locked mergiraf
+fi
+
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "==> Installing Oh My Zsh..."
@@ -85,6 +91,7 @@ ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 # Stow dotfiles
 echo "==> Stowing dotfiles..."
 rm -f "$HOME/.zshrc" "$HOME/.p10k.zsh" "$HOME/.gitconfig"
+rm -f "$HOME/.config/git/attributes"
 rm -f "$HOME/.oh-my-zsh/custom/aliases.zsh" "$HOME/.oh-my-zsh/custom/functions.zsh" "$HOME/.oh-my-zsh/custom/exports.zsh"
 
 cd "$DOTFILES_DIR"
