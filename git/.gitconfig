@@ -3,6 +3,8 @@
 	name = Eduar Bastidas
 [push]
 	autoSetupRemote = true
+[alias]
+	doff = diff --no-ext-diff
 [diff]
 	external = difft
 [merge]
