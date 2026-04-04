@@ -53,6 +53,13 @@ if [ ! -d "$HOME/.nvm" ]; then
     nvm install --lts
 fi
 
+# Rust (cargo)
+if ! command -v cargo &>/dev/null; then
+    echo "==> Installing Rust..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "$HOME/.cargo/env"
+fi
+
 # Stripe CLI
 if ! command -v stripe &>/dev/null; then
     echo "==> Installing Stripe CLI..."
