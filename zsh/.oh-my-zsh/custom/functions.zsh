@@ -1,12 +1,15 @@
 # Commit everything with auto issue prefix from branch name
 function commit() {
+    local commitMessage
+    local -a opts
+
     if [[ "$1" == -* ]]; then
         commitMessage="wip"
-        options="$@"
+        opts=("$@")
     else
         commitMessage="$1"
         shift
-        options="$@"
+        opts=("$@")
     fi
 
     git add .
@@ -20,7 +23,7 @@ function commit() {
         commitMessage="$(getIssueName): $commitMessage"
     fi
 
-    git commit -a -m "$commitMessage" $options
+    git commit -a -m "$commitMessage" "${opts[@]}"
 }
 
 # Get the issue name from the branch name
@@ -52,6 +55,17 @@ function getIssueName() {
         fi
     done
     echo ""
+}
+
+# Git branch detection
+function gitmainormaster() {
+    local branch=$(git branch --list --format="%(refname:short)" main master | head -1)
+    echo "${branch:-main}"
+}
+
+function gitdevordev() {
+    local branch=$(git branch --list --format="%(refname:short)" development develop dev | head -1)
+    echo "${branch:-development}"
 }
 
 # Auto-create and activate python venv

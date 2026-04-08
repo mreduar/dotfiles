@@ -25,8 +25,8 @@ alias gf="git fetch"
 alias wta="git worktree add"
 alias wtr="git worktree remove"
 alias nah="git reset --hard HEAD && git clean -df"
-alias gitmainormaster='printf "%s\n" $(git branch --format "%(refname:short)" --sort=-committerdate --list master main) main | head -n 1'
 alias main='git checkout $(gitmainormaster)'
+alias devv='git checkout $(gitdevordev)'
 
 # Testing
 alias p='./vendor/bin/sail bin pest'
