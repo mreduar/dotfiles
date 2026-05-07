@@ -117,3 +117,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export OPENCLI_CDP_ENDPOINT="http://127.0.0.1:9232"
+
+# opencode
+export PATH=/home/mreduar/.opencode/bin:$PATH
