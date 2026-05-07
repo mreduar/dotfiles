@@ -68,6 +68,18 @@ function gitdevordev() {
     echo "${branch:-development}"
 }
 
+# Sail wrapper: ensure Traefik is up before `sail up`
+function sail() {
+    if [[ "$1" == "up" ]]; then
+        docker compose -f "$HOME/traefik/docker-compose.yml" up -d >/dev/null
+    fi
+    if [[ -f ./vendor/bin/sail ]]; then
+        ./vendor/bin/sail "$@"
+    else
+        command sail "$@"
+    fi
+}
+
 # Auto-create and activate python venv
 smartvenv() {
     local venv_path="venv"

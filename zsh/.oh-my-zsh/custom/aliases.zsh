@@ -9,7 +9,6 @@ alias nr="npm run"
 alias dotfiles="vs ~/dotfiles"
 
 # Laravel / Sail
-alias sail="vendor/bin/sail"
 alias art="sail artisan"
 alias up='sail up -d'
 alias dev="sail up -d && sail npm run dev"
