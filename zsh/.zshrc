@@ -121,3 +121,16 @@ export OPENCLI_CDP_ENDPOINT="http://127.0.0.1:9232"
 
 # opencode
 export PATH=/home/mreduar/.opencode/bin:$PATH
+
+# reviewr aliases
+alias rbdev='_reviewr_base development'
+alias rbmain='_reviewr_base main'
+
+# zoxide (smarter cd) — must come after compinit (oh-my-zsh)
+eval "$(zoxide init zsh)"
+
+# custom functions (compartidas)
+source ~/.zsh_functions
+
+# funciones locales de esta máquina (no versionadas)
+[[ -f ~/.zsh_local ]] && source ~/.zsh_local
