@@ -41,6 +41,7 @@ alias clearBranches='prune-branches'
 
 # Stripe
 alias stripe-webhook='stripe listen --forward-to http://manyrequests.localhost/stripe/webhook'
+alias stripe-webhook-mtg='stripe listen --forward-to http://mtg.manyrequests.localhost/stripe/webhook'
 alias stripe-internal-webhook='stripe listen --forward-to http://manyrequests.localhost/stripe/internal-webhook'
 
 # Tools
@@ -49,6 +50,7 @@ alias codexx="codex --yolo"
 alias cso="vscli open --command vs . --behavior detect"
 alias rp="npx tsx src/bin/cli.ts"
 alias clauded='claude --dangerously-skip-permissions'
+alias cc="clauded"
 alias vs="vscli open"
 
 # Game modding
@@ -59,3 +61,4 @@ alias apep='cd /mnt/d/Juegos/Bots/Apep\ wotlk/rotations && vs .'
 alias pip='smartvenv && pip'
 alias python='smartvenv && python'
 alias pip3='smartvenv && pip3'
+alias hreview="herdr plugin action invoke open --plugin persiyanov.reviewr"
